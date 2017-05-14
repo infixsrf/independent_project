@@ -7,6 +7,7 @@ class Main(): # основной класс
 
 	def one(self): 
 		print("Hello facking world!")
+		print("")
 
 class Dog(Main):             # наследуем класс Main()
 	_name = "is not defined" # применяем -
@@ -26,14 +27,15 @@ class Dog(Main):             # наследуем класс Main()
 	def set_age(self, age):
 		self._age = age
 
-	def get_name(self):
+	def get_age(self):
 		return self._age
 
 	def printf_status(self):
-		print("Имя собаки = ", get_name())
-		print("Возраст собаки = ", get_age())
+		print("Имя собаки = ", self.get_name())
+		print("Возраст собаки = ", self.get_age())
 
 oDog = Dog("Vika", 15)    # передаём аргументы конструктору, который мы переопределили
 oDog.one()                # метод который уноследовался
 oDog.set_name("Виктория") # изменяем имя, если это нужно, это можно и отнести к методу set_age
 oDog.printf_status()      # выводим статус нашего объекта
+input()
